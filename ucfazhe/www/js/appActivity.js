@@ -56,11 +56,8 @@ function replaceGraphs() {
 	}
 
 	function showPosition(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-	document.getElementById('showLocation').innerHTML = "Latitude: " + latitude +
-	"<br>Longitude: " + longitude;
-	L.marker([latitude, longitude]).addTo(mymap)
-			.bindPopup("<b>You are here</b>").openPopup();
-	
-	}
+	// draw a point on the map
+	L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap)
+		.bindPopup("<b>You were at "+ position.coords.longitude + " "+position.coords.latitude+"!</b>");
+	mymap.setView([position.coords.latitude, position.coords.longitude], 13);
+}
