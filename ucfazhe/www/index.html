@@ -59,8 +59,22 @@
       z-index: 900;
     }
     </style>
+    <!-- the following links add the CSS and Javascript required for the Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+    integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+    integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+    crossorigin=""></script>
+    <!-- the following CSS is used to set the size of the Map -->
+    <style type="text/css">
+        #mapid { height: 180px; }
+    </style>
   </head>
   <body>
+    <!-- the mapid div will hold the map -->
+    <div id="mapid" style="width: 600px; height: 400px;"></div>
+  <!-- the following script will load the map and set the default view and zoom, as well as loading the basemap tiles -->
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -134,6 +148,11 @@
           </div>
         </div>
       </main>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid" >
+        <div id="mapid" style="width: 600px; height: 400px;"></div>
+     </div>
+     </main>
     </div>
       <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
