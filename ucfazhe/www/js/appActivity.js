@@ -62,3 +62,21 @@ mymap.removeLayer( earthquakelayer );
 document.addEventListener('DOMContentLoaded', function() {
 getEarthquakes();
 }, false);
+
+//Track location function
+	function trackLocation() {
+	if (navigator.geolocation) {
+	navigator.geolocation.watchPosition(showPosition);
+	} else {
+	document.getElementById('showLocation').innerHTML = "Geolocation is not supported by this browser.";
+	}
+	}
+	function showPosition(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	document.getElementById('showLocation').innerHTML = "Latitude: " + latitude +
+	"<br>Longitude: " + longitude;
+	L.marker([latitude, longitude]).addTo(mymap)
+			.bindPopup("<b>You are here</b>").openPopup();
+	
+	}
